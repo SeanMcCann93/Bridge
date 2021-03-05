@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo su ubuntu
+sudo apt update
 sudo apt-get update -y
 sudo apt install awscli -y
 sudo apt install python3 -y
@@ -13,7 +14,6 @@ git config --global user.name "${git_user}"
 cd /home/ubuntu
 git clone https://github.com/${git_user}/${project_name}
 cd ./${project_name}
-chmod +x ./scripts/git/*
 chmod +x ./scripts/install/*
 sh ./scripts/install/terra.sh
 sh ./scripts/install/docker.sh
@@ -31,5 +31,6 @@ pip3 install flask-testing
 pip3 install requests
 sudo apt update -y
 sudo su
-cp scripts/git/gp.sh /bin/gp
-cp scripts/git/gp.sh /bin/gp
+chmod +x ./scripts/git/*
+cp ./scripts/git/gp.sh /bin/gp
+cp ./scripts/git/gn.sh /bin/gn
