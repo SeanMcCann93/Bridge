@@ -34,3 +34,4 @@ sudo su
 chmod +x ./scripts/git/*
 cp ./scripts/git/gp.sh /bin/gp
 cp ./scripts/git/gn.sh /bin/gn
+rm -rf ./~

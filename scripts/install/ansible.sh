@@ -9,6 +9,6 @@ echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
 
 source ~/.bashrc
 
-pip install --user ansible
+sudo apt install ansible
 
 ansible --version

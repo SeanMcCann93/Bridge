@@ -23,8 +23,3 @@ sudo usermod -aG docker $(whoami)
 sudo apt update
 
 docker --version
-
-Tools ~ repleace = []
-docker images
-docker rmi [image id]
-docker login
