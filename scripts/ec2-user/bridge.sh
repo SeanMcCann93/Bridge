@@ -20,8 +20,10 @@ sh ./scripts/install/docker.sh
 sh ./scripts/install/compose.sh
 sh ./scripts/install/ansible.sh
 sh ./scripts/install/jenkins.sh
-echo ".gitignore\n" >> .gitignore
+echo "" >> .gitignore
+echo ".gitignore" >> .gitignore
 python3 -m venv ${project_name}-venv
+echo "" >> .gitignore
 echo "/${project_name}-venv/" >> .gitignore
 . ${project_name}-venv/bin/activate
 pip install flask
