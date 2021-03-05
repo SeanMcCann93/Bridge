@@ -14,7 +14,7 @@ echo "GIT Set-up"
 read -p "Git User Name: " git_user
 read -p "Git email : " git_email
 # read -p "Git Project : " git_pro
-git_pro = "Bridge"
+git_pro="Bridge"
 
 # Update and install ASW CLI
 sudo apt-get update -y && sudo apt install awscli -y
