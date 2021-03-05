@@ -15,4 +15,4 @@ sudo curl -L "https://github.com/docker/compose/releases/download/${version}/doc
 # Make the Executable
 sudo chmod +x /usr/local/bin/docker-compose
 
-docker-compose --version
+#docker-compose --version

@@ -19,10 +19,5 @@ sudo mv terraform /usr/local/bin
 # Remove the zip file
 sudo rm terraform_*_linux_*.zip
 
-echo ""
-
 # Display the version Installed
-echo "~ Version Installed ~"
-terraform --version
-
-echo ""
+#terraform --version

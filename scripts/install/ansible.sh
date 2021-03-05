@@ -11,4 +11,4 @@ source ~/.bashrc
 
 sudo apt install ansible
 
-ansible --version
+#ansible --version

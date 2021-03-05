@@ -18,8 +18,8 @@ sudo apt update
 curl https://get.docker.com | sudo bash
 
 # Set Docker as a main command
-sudo usermod -aG docker $(whoami)
+#sudo usermod -aG docker $(whoami)
 
 sudo apt update
 
-docker --version
+#docker --version
