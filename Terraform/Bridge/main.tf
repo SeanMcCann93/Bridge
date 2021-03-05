@@ -19,7 +19,7 @@ provider "aws" {
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 resource "aws_key_pair" "key_pair" {
-  key_name   = "CTech-Bridge"
+  key_name   = "Bridge"
   public_key = file("~/.ssh/Bridge.pub")
 }
 
