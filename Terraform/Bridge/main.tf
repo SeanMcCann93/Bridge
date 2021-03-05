@@ -20,7 +20,7 @@ provider "aws" {
 
 resource "aws_key_pair" "key_pair" {
   key_name   = "CTech-Bridge"
-  public_key = file("~/.ssh/CTech-Bridge.pub")
+  public_key = file("~/.ssh/Bridge.pub")
 }
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -33,8 +33,8 @@ module "vpc" {
   hostname = true
 
   # @@@ TAGS @@@
-  name_tag = "CTech-Bridge-Cloud"
-  network_tag = "CTech-Bridge"
+  name_tag = "Bridge-Cloud"
+  network_tag = "Bridge"
 }
 
 module "igw" {
@@ -42,8 +42,8 @@ module "igw" {
   vpc_id = module.vpc.id
 
   # @@@ TAGS @@@
-  name_tag    = "CTech-Bridge_Network_Gate"
-  network_tag = "CTech-Bridge"
+  name_tag    = "Bridge_Network_Gate"
+  network_tag = "Bridge"
 }
 
 data "aws_availability_zones" "available" {
@@ -58,8 +58,8 @@ module "subnet_main" {
   vpc_id  = module.vpc.id
 
   # @@@ TAGS @@@
-  name_tag    = "CTech-Bridge_Subnet"
-  network_tag = "CTech-Bridge"
+  name_tag    = "Bridge_Subnet"
+  network_tag = "Bridge"
 }
 
 module "subnet_required" {
@@ -70,8 +70,8 @@ module "subnet_required" {
   vpc_id  = module.vpc.id
 
   # @@@ TAGS @@@
-  name_tag    = "Closed_CTech-Bridge_Subnet"
-  network_tag = "CTech-Bridge"
+  name_tag    = "Closed_Bridge_Subnet"
+  network_tag = "Bridge"
 }
 
 module "public_routes" {
@@ -81,8 +81,8 @@ module "public_routes" {
   igw_id  = module.igw.id
 
   # @@@ TAGS @@@
-  name_tag    = "CTech-Bridge-Routes"
-  network_tag = "CTech-Bridge"
+  name_tag    = "Bridge-Routes"
+  network_tag = "Bridge"
 }
 
 module "public_routes_association" {
@@ -116,7 +116,7 @@ module "sg" {
 
   # @@@ TAGS @@@
   name_tag = "port_access"
-  network_tag = "CTech-Bridge"
+  network_tag = "Bridge"
 }
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -177,7 +177,7 @@ module "ec2_bridge" {
   instance_count = "1"
   ami_code       = "ami-08bac620dc84221eb" # Ubuntu 20.04
   type_code      = "t2.micro"            # 1 x CPU + 1 x RAM
-  pem_key        = "CTech-Bridge"
+  pem_key        = "Bridge"
   subnet         = module.subnet_main.id
   vpc_sg         = [module.sg.id]
   pub_ip         = true
@@ -192,5 +192,5 @@ module "ec2_bridge" {
 
   # @@@ TAGS @@@
   name_tag = "Bridge"
-  network_tag = "CTech-Bridge"
+  network_tag = "Bridge"
 }
