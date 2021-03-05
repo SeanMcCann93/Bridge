@@ -37,3 +37,7 @@ variable "name_tag" {
 variable "network_tag" {
   description = "Name of the Network Being attached."
 }
+
+variable "lock" {
+  description = "This will prevent the system from being terminated if made true."
+}

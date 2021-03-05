@@ -1,5 +1,7 @@
 #!/bin/bash
 
+locking="false"
+
 # Aquire all data needed for terraform and new instance script
 echo "AWS Configure"
 read -p 'AWS Access Key : ' temp_access
@@ -39,17 +41,17 @@ sh scripts/key/bridge-keygen.sh
 
 cd Terraform/Bridge/ && terraform init
 
-echo ""
-echo "      :::::::::  :::           :::     ::::    :::"
-echo "     :+:    :+: :+:         :+: :+:   :+:+:   :+:"
-echo "    +:+    +:+ +:+        +:+   +:+  :+:+:+  +:+"
-echo "   +#++:++#+  +#+       +#++:++#++: +#+ +:+ +#+"
-echo "  +#+        +#+       +#+     +#+ +#+  +#+#+#"  
-echo " #+#        #+#       #+#     #+# #+#   #+#+#"
-echo "###        ######### ###     ### ###    ####"
-echo ""
+# echo ""
+# echo "      :::::::::  :::           :::     ::::    :::"
+# echo "     :+:    :+: :+:         :+: :+:   :+:+:   :+:"
+# echo "    +:+    +:+ +:+        +:+   +:+  :+:+:+  +:+"
+# echo "   +#++:++#+  +#+       +#++:++#++: +#+ +:+ +#+"
+# echo "  +#+        +#+       +#+     +#+ +#+  +#+#+#"  
+# echo " #+#        #+#       #+#     #+# #+#   #+#+#"
+# echo "###        ######### ###     ### ###    ####"
+# echo ""
 
-terraform plan -var aws_ac="${temp_access}" -var aws_sec_ac="${temp_sec_access}" -var git_pro="${git_pro}" -var git_mail="${git_email}" -var git_user="${git_user}" -var aws_location="${temp_location}"
+# terraform plan -var locked="${locking}" -var aws_ac="${temp_access}" -var aws_sec_ac="${temp_sec_access}" -var git_pro="${git_pro}" -var git_mail="${git_email}" -var git_user="${git_user}" -var aws_location="${temp_location}"
 
 echo ""
 echo "      :::::::::  :::    ::: ::::::::: :::       :::::::::"
@@ -61,4 +63,4 @@ echo " #+#    #+# #+#    #+#    #+#    #+#       #+#    #+#"
 echo "#########   ########  ######### ######### #########"
 echo ""
 
-terraform apply -var aws_ac="${temp_access}" -var aws_sec_ac="${temp_sec_access}" -var git_pro="${git_pro}" -var git_mail="${git_email}" -var git_user="${git_user}" -var aws_location="${temp_location}" -auto-approve
+terraform apply -var locked="${locking}" -var aws_ac="${temp_access}" -var aws_sec_ac="${temp_sec_access}" -var git_pro="${git_pro}" -var git_mail="${git_email}" -var git_user="${git_user}" -var aws_location="${temp_location}" -auto-approve

@@ -181,6 +181,7 @@ module "ec2_bridge" {
   subnet         = module.subnet_main.id
   vpc_sg         = [module.sg.id]
   pub_ip         = true
+  lock           = var.locked
   user_data     = templatefile("./../../scripts/ec2-user/bridge.sh", {
     git_email = var.git_mail
     git_user = var.git_user

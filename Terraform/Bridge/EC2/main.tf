@@ -7,6 +7,7 @@ resource "aws_instance" "ec2_instance" {
   vpc_security_group_ids      = var.vpc_sg
   associate_public_ip_address = var.pub_ip
   user_data                   = var.user_data
+  disable_api_termination     = var.lock
 
   tags = {
     Name = var.name_tag
