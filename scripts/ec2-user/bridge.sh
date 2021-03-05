@@ -18,8 +18,8 @@ chmod +x ./scripts/install/*
 sh ./scripts/install/terra.sh
 sh ./scripts/install/docker.sh
 sh ./scripts/install/compose.sh
-sh ./scripts/install/ansible.sh
-sh ./scripts/install/jenkins.sh
+# sh ./scripts/install/ansible.sh
+# sh ./scripts/install/jenkins.sh
 echo "" >> .gitignore
 echo ".gitignore" >> .gitignore
 python3 -m venv ${project_name}-venv
@@ -36,5 +36,5 @@ sudo su
 chmod +x ./scripts/git/*
 cp ./scripts/git/gp.sh /bin/gp
 cp ./scripts/git/gn.sh /bin/gn
-rm -rf ./~
+# rm -rf ./~
 sudo usermod -aG docker $(whoami)
